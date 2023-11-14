@@ -1,17 +1,32 @@
 
-*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+
+a 
 {
-    box-sizing: border-box;
+    text-decoration:none;
 }
 
-html
+
+
+
+* 
 {
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+
+
+
+}
+
+html {
     min-height: 100vh;
 }
 
 
-body
-{
+body {
     margin: 0;
     background: radial-gradient(pink, lightblue);
     background-image: url('house.jpg');
@@ -19,18 +34,19 @@ body
 
     /* font-family: 'Bungee', sans-serif; */
 
-    font-family: 'Bungee Spice', sans-serif;
+    /* font-family: 'Bungee Spice', sans-serif; */
+
+    /* font-family: 'Poppins', sans-serif; */
 
 
 }
 
 
 
-h1
-{
+h1 {
     font-family: 'Bungee Spice', sans-serif;
 
-    
+
 
 }
 
@@ -42,8 +58,7 @@ h1
 
 
 
-.page-title
-{
+.page-title {
     color: black;
     font-weight: bold;
     text-align: center;
@@ -56,14 +71,13 @@ h1
 
 
 /* 遊戲資訊區塊 */
-.game-info-container
-{
+.game-info-container {
     /* 讓遊戲資訊區塊占滿一整列 */
     grid-column: 1/-1;
     /* 設定 display: flex;可以讓Time和Flips區塊在同一列*/
     display: flex;
     justify-content: space-between;
-    
+
     background-color: antiquewhite;
 
     padding: 10px;
@@ -71,21 +85,26 @@ h1
 
     border-radius: 12px;
 
-    border: 3px solid black;
-    
+    border: 5px solid black;
+
 
 
 }
 
 
 /* 包住時間和Flips的區塊 */
-.game-info
+/* .game-info
 {
     color: black;
-    /* font-size: 4em; */
     font-size: 2em;
+} */
+
+.game-info {
+    color: black;
+    font-size: 3.2em;
+
 }
-   
+
 
 
 
@@ -96,8 +115,8 @@ h1
 } */
 
 
-.w3-container, .w3-light-grey
-{
+.w3-container,
+.w3-light-grey {
     grid-column: 1/-1;
 }
 
@@ -108,16 +127,15 @@ h1
 
 
 
-.game-container
-{
+.game-container {
     border: 5px solid black;
     display: grid;
-    grid-template-columns: repeat(4,auto);
+    grid-template-columns: repeat(4, auto);
     /* grid-auto-flow: row;預設為row從上到下排列 */
     /* grid-auto-flow: row; */
     grid-gap: 10px;
     /* margin: 50px; */
-    
+
     margin: 20px 150px;
     justify-content: center;
     /* background-color: blueviolet; */
@@ -126,32 +144,49 @@ h1
 
 
     padding: 10px;
-  
-   
 
-    
-    
+
+
+
+
 }
 
 
 
 
 /* 設定卡片的CSS */
-.card
+
+/* .card
 {
-    /* background-color: red; */
-    /* height: 175px; */
-    /* width: 125px; */
+    background-color: red;
+    height: 175px;
+    width: 125px;
+
     height: 100px;
     width: 80px;
+    position: relative;
+} */
+
+/* 樣式for Project */
+.card 
+{
+    /* background-color: red; */
+    height: 175px;
+    width: 125px;
+    /* height: 100px; */
+    /* width: 80px; */
     position: relative;
 }
 
 
+
+
+
+
+
 /* 正面卡片和背面卡片會浮起來 */
 /* transition: transform 500ms ease-in-out; 設定卡片翻轉的動畫 */
-.card-face
-{
+.card-face {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -162,36 +197,36 @@ h1
     /* 卡片翻到背面就隱藏起來 */
     backface-visibility: hidden;
     border-radius: 12px;
-    border-width: 3px;
+    border-width: 5px;
     border-style: solid;
     transition: transform 350ms ease-in-out;
-/*  */
+    /* ease-in-out 平緩的 ease */
 
 
 }
 
 /* 卡片後面 */
-.card-back
+.card-back 
 {
-    background-color:pink;
+    background-color: pink;
     border-color: black;
 }
 
-.card.visible .card-back
+.card.visible .card-back 
 {
     transform: rotateY(-180deg);
-} 
+}
 
 
 
 /* 設定卡片正面，一開始設定翻過去 */
-.card-front
+.card-front 
 {
     background-color: yellow;
     transform: rotateY(180deg);
 }
 
-.card.visible .card-front
+.card.visible .card-front 
 {
     transform: rotateY(0);
 }
@@ -200,12 +235,12 @@ h1
 
 
 
-.card.match .card-back
+.card.match .card-back 
 {
     transform: rotateY(-180deg);
-} 
+}
 
-.card.match .card-front
+.card.match .card-front 
 {
     transform: rotateY(0);
 }
@@ -215,17 +250,17 @@ h1
 
 
 /* 正面卡片中間圖案 */
-.card-value
-{
+.card-value {
     /* transform: scale(.9); */
     /* transform: scale(.5); */
     /* max-width: 100%; */
     object-fit: cover;
     object-position: center center;
-    height:  100%;
+    height: 100%;
 
 
 }
+
 /* 讓圖片變大 */
 /* .card-front:hover .card-value
 {
@@ -242,20 +277,18 @@ h1
 } */
 
 
-@keyframes dance 
-{
-    0%, 100%
-    {
-        transform: rotate(0);
-    }    
+@keyframes dance {
 
-    25%
-    {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    25% {
         transform: rotate(-30deg);
     }
-    
-    75%
-    {
+
+    75% {
         transform: rotate(30deg);
     }
 
@@ -268,8 +301,7 @@ h1
 
 
 /* cob-web會浮起來 */
-.cob-web
-{
+.cob-web {
     position: absolute;
     width: 47px;
     height: 47px;
@@ -277,45 +309,39 @@ h1
 }
 
 /*  */
-.card-face:hover .cob-web
-{
+.card-face:hover .cob-web {
     width: 52px;
     height: 52px;
 }
 
 
 
-.cob-web-top-left
-{
+.cob-web-top-left {
     transform: rotate(270deg);
     top: 0;
     left: 0;
 }
 
-.cob-web-top-right
-{
-    
+.cob-web-top-right {
+
     top: 0;
     right: 0;
 }
 
-.cob-web-bottom-left
-{
+.cob-web-bottom-left {
     transform: rotate(180deg);
     bottom: 0;
     left: 0;
 }
 
-.cob-web-bottom-right
-{
+.cob-web-bottom-right {
     transform: rotate(90deg);
     bottom: 0;
     right: 0;
 }
 
 
-.spider
-{
+.spider {
     /* align-self: flex-start; */
     /* transform:translateY(-10px) ; */
     transition: transform 100ms ease-in-out;
@@ -324,12 +350,11 @@ h1
     width: 100%;
     object-fit: cover;
     object-position: center center;
-    height:  100%;
+    height: 100%;
 }
 
 
-.card-back.visible .spider
-{
+.card-back.visible .spider {
     transform: translateY(0);
 }
 
@@ -337,23 +362,25 @@ h1
 
 /* 開始遊戲的字 */
 /* 一開始的時候都是隱藏起來 */
-.overlay-text
+.overlay-text 
 {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
     display: none;
+
     justify-content: center;
     align-items: center;
     /* z-index: 100; */
-    color: orange;
-    
+    color: gold;
+
 }
 
-
-.overlay-text.cansee
+/* forwards:停在結束狀態，希望動畫結束停在最後一格時使用。 */
+.overlay-text.cansee 
 {
     display: flex;
     animation: overlay-grow 500ms forwards;
@@ -364,14 +391,13 @@ h1
 
 }
 
-.overlay-text-small
-{
+.overlay-text-small {
     font-size: 0.35em;
 }
 
 
 
-@keyframes overlay-grow 
+/* @keyframes overlay-grow 
 {
     from
     {
@@ -381,34 +407,84 @@ h1
     to
     {
         background-color: rgba(0, 0, 0, 0.99);
-        /* font-size: 8em; */
+        
         font-size: 3em;
+
+    }
+} */
+
+
+
+@keyframes overlay-grow 
+{
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.99);
+        /* font-size: 8em; */
+        font-size: 6em;
 
     }
 }
 
 
 
+
+
+
+
 /*  RWD 設計 */
-@media (max-width:600px) 
+/* @media (max-width: 2000px) 
 {
     .game-container
     {
-        grid-template-columns: repeat(2,auto);
-
-        /* width: 50%; */
+        grid-template-columns: repeat(6,auto);
 
     }    
 
     .game-info-container
     {
-        flex-direction: column;
         align-items: center;
     }
 
 
     
-}
+} */
+
+/* @media (max-width:1800px) 
+{
+    .game-container
+    {
+        grid-template-columns: repeat(4,auto);
+
+    }    
+
+    .game-info-container
+    {
+        
+        align-items: center;
+    }
+
+    .card
+    {
+        
+        height: 175px;
+        width: 125px;
+        position: relative;
+    }
 
 
+    .game-info
+    {
+        color: black;
+        font-size: 2.5em;
 
+    }
+    
+} */
+
+
+/* height: 120px; */
+        /* width: 100px; */

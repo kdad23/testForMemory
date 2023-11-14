@@ -22,13 +22,13 @@ audio.loop = true;
 
 
 
-// 讓 Click to Srarts 的大字顯示出來
+// 讓 Click to Starts 的大字顯示出來
 document.querySelector('#startGame').classList.add('cansee');
 
 document.querySelector('#startGame').addEventListener('click', () => {
 
     // 洗牌+翻過來讓玩家看牌
-    suffleImage();
+    shuffleCard();
     clicking();
 
 
@@ -58,51 +58,51 @@ document.querySelector('#startGame').addEventListener('click', () => {
 // startGame();
 
 
-function startGame() {
+// function startGame() {
 
 
 
-    //
-    console.log("現在在startGame函式裡面");
+//     //
+//     console.log("現在在startGame函式裡面");
 
 
-    // 讓startGame 的字體顯示出來
-    document.querySelector('#startGame').classList.add('cansee');
+//     // 讓startGame 的字體顯示出來
+//     document.querySelector('#startGame').classList.add('cansee');
 
 
-    // 在startGame 的大字體上加上點擊事件
-    document.querySelector('#startGame').addEventListener('click', () => {
+//     // 在startGame 的大字體上加上點擊事件
+//     document.querySelector('#startGame').addEventListener('click', () => {
 
-        // 洗牌+翻過來讓玩家看牌
-        suffleImage();
-        clicking();
-
-
-
-
-        setTimeout(() => {
-            // 呼叫倒數計時的函式，開始倒數計時
-            // countDownTime();
-            // console.log('呼叫countDownTime');
-        }, 2500)
-
-
-        //  開始撥放音樂
-        audio.play();
-        audio.muted = false;
-
-
-
-        // 把 startGame 的大字體在畫面上移除
-        document.querySelector('#startGame').classList.remove('cansee');
+//         // 洗牌+翻過來讓玩家看牌
+//         shuffleCard();
+//         clicking();
 
 
 
 
-    })
+//         setTimeout(() => {
+//             // 呼叫倒數計時的函式，開始倒數計時
+//             // countDownTime();
+//             // console.log('呼叫countDownTime');
+//         }, 2500)
 
 
-}
+//         //  開始撥放音樂
+//         audio.play();
+//         audio.muted = false;
+
+
+
+//         // 把 startGame 的大字體在畫面上移除
+//         document.querySelector('#startGame').classList.remove('cansee');
+
+
+
+
+//     })
+
+
+// }
 
 
 
@@ -121,8 +121,9 @@ function startGame() {
 
 // Array(card.length)創造1個長度為card.length的空陣列
 // card中的元素為名為cell的class 元素
-// suffleImage();
-function suffleImage() {
+
+function shuffleCard() 
+{
     card.forEach(c => {
         // 產生1個陣列，[0,1,2,3,4,5,6,7,8,9,10,11]
         const num = [...Array(card.length).keys()];
@@ -144,13 +145,15 @@ function suffleImage() {
 
 
 // 
-function clicking() {
+function clicking() 
+{
     // 宣告總翻牌的變數
     let totalOfFlips = 0;
 
 
 
-    for (let i = 0; i < card.length; i++) {
+    for (let i = 0; i < card.length; i++) 
+    {
         // 一開始，先讓全部的區塊同步顯示正面，過幾秒後全部的區塊同步翻到背面
         // 在front 區塊上新增名為visible的class，讓區塊顯示正面
         card[i].classList.add('visible');
@@ -160,11 +163,10 @@ function clicking() {
     // 設定讓玩家可以看見卡片幾秒，去記憶卡片的位置，時間到就把牌翻到背面
     let timeoutID = setTimeout(() => {
 
-        for (let i = 0; i < card.length; i++) {
+        for (let i = 0; i < card.length; i++) 
+        {
             // 將所有卡片翻到背面，不顯示
             card[i].classList.remove('visible');
-
-
         }
 
 
@@ -448,7 +450,7 @@ function countDownTime() {
 
     console.log('進到countDownTime裡面');
     // 設定開始要倒數計時的時間
-    let countdownTime = 5;
+    let countdownTime = 100;
 
 
 
