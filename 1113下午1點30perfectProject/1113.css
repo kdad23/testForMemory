@@ -43,12 +43,7 @@ body {
 
 
 
-h1 {
-    font-family: 'Bungee Spice', sans-serif;
 
-
-
-}
 
 
 
@@ -171,8 +166,10 @@ h1 {
 .card 
 {
     /* background-color: red; */
-    height: 175px;
-    width: 125px;
+    height: 195px;
+    width: 155px;
+    /* height: 175px;
+    width: 125px; */
     /* height: 100px; */
     /* width: 80px; */
     position: relative;
@@ -391,7 +388,8 @@ h1 {
 
 }
 
-.overlay-text-small {
+.overlay-text-small 
+{
     font-size: 0.35em;
 }
 
